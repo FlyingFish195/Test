@@ -13,7 +13,7 @@ function openURL(url){
 function getQuote(){
     $.ajax({
         headers:{
-          "X-Mashape-Key": "OivH71yd3tmshl9YKzFH7BTzBVRQp1RaKLajsnafgL2aPsfP9V";
+          "X-Mashape-Key": "OivH71yd3tmshl9YKzFH7BTzBVRQp1RaKLajsnafgL2aPsfP9V",
           Accept:"application/json",
           "Content-Type":"application/x-www-form-urlencoded"
         },
@@ -55,7 +55,7 @@ function getQuote(){
         }
     });
 }
-$(doucument).ready(function(){
+$(document).ready(function(){
     getQuote();
     $('#new-quote').on('click',getQuote);
     $('#tweet-quote').on('click',function(){
