@@ -1,0 +1,156 @@
+<h2>HTTP工作原理</h2>
+HTTP协议工作于客户端-服务器架构上。浏览器作为HTTP客户端通过URL向HTTP服务端即WEB服务器发送所有请求.
+<h2>HTTP三点注意事项</h2>
+* HTTP是无连接：无连接的含义是限制每次链接只处理一个请求。服务器处理完客户的请求，并收到客户的应答后，即断开链接。采用这种方式可以节省传输时间。
+* HTTP是媒体独立的：这意味着，只要客户端和服务器知道如何处理的数据内容，任何类型的数据都可以通过HTTP发送。客户端以及服务器指定使用适合的MIME-type内容类型。
+* HTTP是无状态：HTTP协议是无状态协议。无状态是指协议对于事物处理没有记忆功能。缺少状态意味着如果后续处理前面的信息，则它必须重传，这样可能导致每次连接传送的数据量增大。另一方面，在服务器不需要先前信息时它的应答较快。
+<h2>HTTP消息结构</h2>
+1.HTTP使用统一资源标识符（Uniform Resource Identifiers,URI)来传输数据和建立连接。
+  一旦建立连接后，数据消息就通过类似Internet邮件所使用的格式[RFC5322]和多用途Internet邮件扩展（MIME）[RFC2045]来传送。<br>
+2.**客户端请求信息**<br>
+  客户端发送一个HTTP请求到服务器的请求消息包括以下格式：请求行（request line）、请求头部（header）、空行和请求数据四个部分组成，下图给出了请求报文的一般格式。<br>
+  ![HTTP消息结构](C:\Users\FlyingFish\Test\随身记\2017_2_7\HTTP消息结构.png)
+  <br>
+3.**服务器响应消息**<br>
+  HTTP 响应也分别由四个部分组成：状态行、消息报头、空行、响应正文。<br>
+  ![服务器响应消息](C:\Users\FlyingFish\Test\随身记\2017_2_7\httpmessage.jpg)<br>
+
+<h2>HTTP请求方法</h2>
+<table>
+    <tr>
+       <th>序号</th>
+       <th>方法</th>
+       <th>描述</th>
+    </tr>
+    <tr>
+       <th>1</th>
+       <th>GET</th>
+       <th>请求指定的页面信息，并返回实体主体。</th>
+    </tr>
+    <tr>
+      <th>2</th>
+      <th>HEAD</th>
+      <th>类似于get请求，只不过返回的响应中没有具体的内容，用于获取报头</th>
+    </tr>
+    <tr>
+     <th>3</th>
+     <th>POST</th>
+     <th>向指定资源提交数据进行处理请求（例如提交表单或者上传文件）。数据被包含在请求体中。POST请求可能会导致新的资源的建立和/或已有资源的修改。</th>
+    </tr>
+    <tr>
+      <th>4</th>
+      <th>PUT</th>
+      <th>从客户端向服务器传送的数据取代指定的文档的内容。</th>
+    </tr>
+    <tr>
+      <th>5</th>
+      <th>DELETE</th>
+      <th>请求服务器删除指定的页面。</th>
+    </tr>
+    <tr>
+      <th>6</th>
+      <th>CONNECT</th>
+      <th>HTTP/1.1协议中预留给能够将连接改为管道方式的代理服务器.</th>
+    </tr>
+    <tr>
+      <th>7</th>
+      <th>OPTIONS</th>
+      <th>允许客户端查看服务器的性能。</th>
+    </tr>
+    <tr>
+      <th>8</th>
+      <th>TRACE</th>
+      <th>回显服务器收到的请求，主要用于测试或诊断.</th>
+    </tr>
+</table>
+
+<h2>HTTP响应头信息</h2>
+<table>
+  <tr>
+    <th>应答头</th>
+    <th>说明</th>
+  </tr>
+  <tr>
+    <th>Allow</th>
+    <th>服务器支持哪些请求方法（如GET、POST等）。</th>
+  </tr>
+  <tr>
+    <th>Content-Encoding</th>
+    <th>文档的编码方法</th>
+  </tr>
+  <tr>
+    <th>Content-Length</th>
+    <th>表示内容长度。只有当浏览器使用持久HTTP连接时才需要这个数据。</th>
+  </tr>
+  <tr>
+    <th>Content-Type</th>
+    <th>表示后面的文档属于什么MIME类型</th>
+  </tr>
+  <tr>
+    <th>Date</th>
+    <th>当前GMT时间</th>
+  </tr>
+  <tr>
+    <th>Expires</th>
+    <th>应该在什么时候认为文档过期，从而不再缓存它</th>
+  </tr>
+  <tr>
+    <th>Last-Modified</th>
+    <th>文档最后改动的时间</th>
+  </tr>
+  <tr>
+    <th>Location</th>
+    <th>表示客户应当到哪里去提取文档</th>
+  </tr>
+  <tr>
+    <th>Refresh</th>
+    <th>表示浏览器应该在多少时间后刷新文档</th>
+  </tr>
+  <tr>
+    <th>Server</th>
+    <th>服务器名称</th>
+  </tr>
+  <tr>
+    <th>Set-Cookie</th>
+    <th>设置和页面相关的Cookie</th>
+  </tr>
+  <tr>
+    <th>WWW-Authenticate</th>
+    <th>客户应该在Authorization头中提供什么类型的授权信息</th>
+  </tr>
+  <tr>
+    <th></th>
+    <th></th>
+  </tr>
+</table>
+<h2>HTTP状态码</h2>
+当浏览者访问一个网页时，浏览者的浏览器会向网页所在服务器发出请求。当浏览器接收并显示网页前，此网页所在的服务器会返回一个包含HTTP状态码的信息头（server header）用以响应浏览器的请求。<br>
+<table>
+  <tr>
+    <th>分类</th>
+    <th>分类描述</th>
+  </tr>
+  <tr>
+    <th>1**</th>
+    <th>信息，服务器收到请求，需要请求者继续执行操作</th>
+  </tr>
+  <tr>
+    <th>2**</th>
+    <th>成功，操作被成功接收并处理</th>
+  </tr>
+  <tr>
+    <th>3**</th>
+    <th>成功，操作被成功接收并处理</th>
+  </tr>
+  <tr>
+    <th>4**</th>
+    <th>客户端错误，请求包含语法错误或无法完成请求</th>
+  </tr>
+  <tr>
+    <th>5**</th>
+    <th>服务器错误，服务器在处理请求的过程中发生了错误</th>
+  </tr>
+</table>
+<a href="http://www.runoob.com/http/http-status-codes.html">Detail Information about http-status-codes</a>
+<h2>HTTP Content-Type</h2>
+<a href="http://www.runoob.com/http/http-content-type.html">Content-Type对照表</a>
