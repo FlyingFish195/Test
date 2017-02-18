@@ -1,5 +1,5 @@
 var app=angular.module('Weather',[]);
-app.factory('WeatherApi'.,function($http){
+app.factory('WeatherApi',function($http){
     var obj={};
     obj.getIP = function(){
         return $http.jsonp("http://ipinfo.io/json?callback=JSON_CALLBACK");
