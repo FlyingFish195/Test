@@ -1,2 +1,45 @@
 # URL中"#" "?" "&"的作用
-*URL无法显示某些特殊符号*
+*有些符号在URL中是不能直接传递的，如果要在URL中传递这些特殊符号，那么就要使用
+他们的编码。*<br>
+<table>
+   <tr>
+    <th>+</th>
+    <th>URL中表示空格</th>
+    <th>%2B</th>
+   </tr>
+   <tr>
+   <th>空格</th>
+   <th>URL中表示空格</th>
+   <th>%20</th>
+   </tr>
+   <tr>
+   <th>/</th>
+   <th>分隔目录和子目录</th>
+   <th>%2F</th>
+   </tr>
+   <tr>
+   <th>?</th>
+   <th>分隔实际的URL和参数</th>
+   <th>%3F</th>
+   </tr>
+   <tr>
+   <th>%</th>
+   <th>指定特殊字符</th>
+   <th>%25</th>
+   </tr>
+   <tr>
+   <th>#</th>
+   <th>表示书签</th>
+   <th>%23</th>
+   </tr>
+   <tr>
+   <th>&</th>
+   <th>URL中指定的参数间的分隔符</th>
+   <th>%26</th>
+   </tr>
+   <tr>
+   <th>=</th>
+   <th>URL中指定参数的值</th>
+   <th>%26</th>
+   </tr>
+</table>
