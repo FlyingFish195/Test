@@ -64,3 +64,4 @@ app.config(function(myProviderProvider){
     myProviderProvider.thingFromConfig = 'This was set in config()';
 })
 ```
+<a href="https://segmentfault.com/a/1190000003096933">Detail Information</a>
