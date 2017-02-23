@@ -64,4 +64,8 @@ app.config(function(myProviderProvider){
     myProviderProvider.thingFromConfig = 'This was set in config()';
 })
 ```
+<<<<<<< HEAD
 <a href="https://segmentfault.com/a/1190000003096933">Detail Information</a>
+=======
+<a href="https://segmentfault.com/a/1190000003096933">Detail Information</a>
+>>>>>>> 60100fc73cf8c2c445e5a66d3273ea9b06244b6e
